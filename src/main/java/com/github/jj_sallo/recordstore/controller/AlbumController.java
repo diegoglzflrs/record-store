@@ -51,7 +51,7 @@ public class AlbumController {
         }
     }
 
-    @PutMapping(value = "/{id}", headers = "Accept=application/json")
+    @PutMapping(value = "/update/{id}", headers = "Accept=application/json")
     ResponseEntity<Album> updateUser(@RequestBody Album album, @PathVariable(value = "id") long id) {
         Optional<Album> albumData = albumRepository.findById(id);
         if (albumData.isPresent()) {
